@@ -1,0 +1,44 @@
+{% extends "template.html" %}
+{% block conteudo %}
+    <table class="table table-striped table-responsive table-bordered">
+        <thead>
+            <tr>
+                <th>Estado</th>
+                <th>Capital</th>
+                <th>Pib Medio 2010(Bilhões)</th>
+                <th>Pib Percapita</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for info in info %}
+                        <tr>
+                            <td>{{ info.UF }}</td>
+                            <td>{{ info.Capital }}</td>
+                            <td>{{ info.PIB_medio }}</td>
+                            <td>{{ info.PIB_percapita }}</td>                       
+                        </tr>
+        {% endfor %}
+        </tbody>
+    </table> 
+    <h1>Estados com menores PIBs</h1> 
+    <table class="table table-striped table-responsive table-bordered">
+        <tr>
+                <th>Estado</th>
+                <th>Capital</th>
+                <th>Pib Medio 2010(Bilhões)</th>
+                <th>Pib Percapita</th>
+            </tr>
+        </thead>        
+        
+        {% for info2 in infos2 %}
+        <tr>
+            <td>{{ info2.UF2 }}</td>
+            <td>{{ info2.Capital2 }}</td>
+            <td>{{ info2.PIB_medio2 }}</td>
+            <td>{{ info2.PIB_percapita2 }}</td>                       
+        </tr>    
+        {% endfor %}        
+    </table>
+    <a href="http://127.0.0.1:5000/login"><button class="btn btn-primary"> Acessar conta </button></a>  
+    <a href="http://127.0.0.1:5000/logout"><button class="btn btn-primary"> Sair da sessao </button></a>       
+{% endblock %}
